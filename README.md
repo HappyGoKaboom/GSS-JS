@@ -1,1 +1,1 @@
-Hello foo wheres bar 
+Global State - Web Framework
