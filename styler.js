@@ -124,7 +124,6 @@ $.global.register({
 
                 if ($.styles[style])
                     {
-                        console.log("@"+ev.element);
                         $.styler.set(ev.data.element, style);
                     }
             }
