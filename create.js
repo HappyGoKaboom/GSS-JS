@@ -635,7 +635,7 @@ $.global.register({
                     {
                         // if array or object array > process settings
                         type = item.__proto__.constructor.__proto__.name || undefined;
-                        
+
                         if (type === 'HTMLElement' || type === 'Node') // element or docFragments (Node)
                             {
                                 // HTML element

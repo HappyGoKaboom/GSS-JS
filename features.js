@@ -129,7 +129,18 @@ $.global.register({
                         }
                     else
                         {
-                            $.id[id] = elem;
+                            if ($.id[id])
+                                {
+                                    // if exists swap and append;
+                                    let temp = $.id[id];
+
+                                    $.id[id] = elem;
+                                    $.append(temp, $.id[id]);
+                                }
+                            else
+                                {
+                                    $.id[id] = elem;
+                                }
                         }
                     }
             
