@@ -79,7 +79,16 @@ $.global.register({
                     {
                         case "styler":
                             ev.data.set = false;
-                            $.styler.set(ev.data.parent, ev.data.value);
+                            if (ev.data.value.isStyler)
+                                {
+                                    // swap styler
+                                    ev.data.parent.styler = ev.data.value;
+                                    $.styler.update_style(ev.data.parent);
+                                }
+                            else
+                                {
+                                    $.styler.set(ev.data.parent, ev.data.value);
+                                }
                             break;
                         case "id":
                             id = "#"+ev.data.value;
@@ -135,6 +144,7 @@ $.global.register({
                             target.styler = {};
                             target.styler.style = {};
                             target.styler.fragments = {};
+                            target.styler.isStyler = true;
                         }
                     
                     if (style instanceof Array)
